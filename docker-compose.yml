@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  batch:
+    build:
+      context: .
+      args:
+        pipenv_install_option: --system --dev
+    volumes:
+      - ~/.aws:/root/.aws
+      - .:/opt/gha:cached
+    tty: true
